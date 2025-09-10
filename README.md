@@ -10,6 +10,7 @@ GDScript Mode is a lightweight and functional mode for Text Forge code editor. I
 - Outline system with main functions (same as Godot script editor)
 - Simple code highlighter, with same colors as Godot default highlighter
 - Simple code completion with keywords
+- Advanced code re-ordering based on [Style Guides](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html#code-order)
 - Linter is in progress ⚠️
 
 ## Setup
