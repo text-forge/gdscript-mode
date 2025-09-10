@@ -26,7 +26,7 @@ enum BlockTypes {
 }
 
 var keyword_colors: Dictionary[Color, Array] = {
-	Color(1, 0.44, 0.52, 1): ["await", "var", "in", "func", "false", "true", "const", "extends", "class", "class_name", "is", "not", "and", "or"],
+	Color(1, 0.44, 0.52, 1): ["await", "var", "in", "func", "false", "true", "const", "extends", "class", "class_name", "is", "not", "and", "or", "enum", "signal"],
 	Color(1, 0.55, 0.8, 1): ["for", "while", "if", "return", "break", "continue", "else", "elif", "pass"],
 	Color(1, 0.69, 0.45, 1): ["@", "export", "export_category", "export_color_no_alpha", "export_custom", "export_dir", "export_enum", "export_exp_easing", "export_file", "export_flags", "export_flags_2d_navigation", "export_flags_2d_physics", "export_flags_2d_render", "export_flags_3d_navigation", "export_flags_3d_physics", "export_flags_3d_render", "export_flags_avoidance", "export_global_dir", "export_global_file", "export_group", "export_multiline", "export_node_path", "export_placeholder", "export_range", "export_storage", "export_subgroup", "export_tool_button", "icon", "onready", "rpc", "static_unload", "tool", "warning_ignore", "warning_ignore_restore", "warning_ignore_start"]
 }
