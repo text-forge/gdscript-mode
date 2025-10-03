@@ -26,18 +26,18 @@ enum BlockTypes {
 }
 
 var keyword_colors: Dictionary[Color, Array] = {
-	Color(1, 0.44, 0.52, 1): ["await", "var", "in", "func", "false", "true", "const", "extends", "class", "class_name", "is", "not", "and", "or", "enum", "signal"],
-	Color(1, 0.55, 0.8, 1): ["for", "while", "if", "return", "break", "continue", "else", "elif", "pass"],
-	Color(1, 0.69, 0.45, 1): ["@", "export", "export_category", "export_color_no_alpha", "export_custom", "export_dir", "export_enum", "export_exp_easing", "export_file", "export_flags", "export_flags_2d_navigation", "export_flags_2d_physics", "export_flags_2d_render", "export_flags_3d_navigation", "export_flags_3d_physics", "export_flags_3d_render", "export_flags_avoidance", "export_global_dir", "export_global_file", "export_group", "export_multiline", "export_node_path", "export_placeholder", "export_range", "export_storage", "export_subgroup", "export_tool_button", "icon", "onready", "rpc", "static_unload", "tool", "warning_ignore", "warning_ignore_restore", "warning_ignore_start"]
+	U.get_syntax_color(U.SyntaxColors.KEYWORD_1): ["await", "var", "in", "func", "false", "true", "const", "extends", "class", "class_name", "is", "not", "and", "or", "enum", "signal"],
+	U.get_syntax_color(U.SyntaxColors.KEYWORD_2): ["for", "while", "if", "return", "break", "continue", "else", "elif", "pass"],
+	U.get_syntax_color(U.SyntaxColors.KEYWORD_3): ["@", "export", "export_category", "export_color_no_alpha", "export_custom", "export_dir", "export_enum", "export_exp_easing", "export_file", "export_flags", "export_flags_2d_navigation", "export_flags_2d_physics", "export_flags_2d_render", "export_flags_3d_navigation", "export_flags_3d_physics", "export_flags_3d_render", "export_flags_avoidance", "export_global_dir", "export_global_file", "export_group", "export_multiline", "export_node_path", "export_placeholder", "export_range", "export_storage", "export_subgroup", "export_tool_button", "icon", "onready", "rpc", "static_unload", "tool", "warning_ignore", "warning_ignore_restore", "warning_ignore_start"]
 }
 var code_regions: Array[Array] = [
-	[Color(1, 0.92, 0.64, 1), '"', '"', false],
-	[Color(1, 0.92, 0.65, 1), "'", "'", false],
-	[Color(0.38, 0.76, 0.36, 1), "$", "", true],
-	[Color(0.38, 0.76, 0.35, 1), '$"', '"', false],
-	[Color(0.38, 0.76, 0.34, 1), "$'", "'", false],
-	[Color(0.8, 0.81, 0.82, 0.5), "#", "", true],
-	[Color(0.6, 0.7, 0.8, 0.8), "##", "", true],
+	[U.get_syntax_color(U.SyntaxColors.STRING), '"', '"', false],
+	[U.get_syntax_color(U.SyntaxColors.STRING), "'", "'", false],
+	[U.get_syntax_color(U.SyntaxColors.CUSTOM_1), "$", "", true],
+	[U.get_syntax_color(U.SyntaxColors.CUSTOM_1), '$"', '"', false],
+	[U.get_syntax_color(U.SyntaxColors.CUSTOM_1), "$'", "'", false],
+	[U.get_syntax_color(U.SyntaxColors.COMMENT), "#", "", true],
+	[U.get_syntax_color(U.SyntaxColors.DOC_COMMENT), "##", "", true],
 ]
 
 func _initialize_mode() -> Error:
@@ -284,10 +284,10 @@ func _lint_file(text: String) -> Array[Dictionary]:
 
 func _initialize_highlighter() -> void:
 	syntax_highlighter = CodeHighlighter.new()
-	syntax_highlighter.number_color = Color(0.63, 1, 0.88, 1)
-	syntax_highlighter.symbol_color = Color(0.67, 0.79, 1, 1)
-	syntax_highlighter.function_color = Color(0.35, 0.7, 1, 1)
-	syntax_highlighter.member_variable_color = Color(0.73, 0.87, 1, 1)
+	syntax_highlighter.number_color = U.get_syntax_color(U.SyntaxColors.NUMBER)
+	syntax_highlighter.symbol_color = U.get_syntax_color(U.SyntaxColors.SYMBOL)
+	syntax_highlighter.function_color = U.get_syntax_color(U.SyntaxColors.FUNCTION)
+	syntax_highlighter.member_variable_color = U.get_syntax_color(U.SyntaxColors.MEMBER)
 	for color in keyword_colors:
 		for keyword in keyword_colors[color]:
 			syntax_highlighter.add_keyword_color(keyword, color)
