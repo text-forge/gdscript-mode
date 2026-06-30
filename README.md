@@ -16,12 +16,18 @@ GDScript Mode is a lightweight and functional mode for Text Forge code editor. I
 ## Setup
 Supports Text Forge 0.1-stable and newer versions.
 
-### Method 1: From releases
+### Method 1: From Marketplace (Recommended)
+- Open editor and go to Settings > Marketplace.
+- Search for `GDScript`.
+- Click on the shown result item.
+- Click on **Install** and wait.
+
+### Method 2: From releases
 - Download `gdscript.tfmode` file from releases. 
 - Open Text Forge and go to Settings > Mode Manager > Import Mode and select kit file. 
 - Mode kit is ready to use. Please restart editor for safer experience.
 
-### Method 2: From repo
+### Method 3: From repo
 - Download repo as zip and extract it. 
 - Open editor data folder (use Settings > Open Data Folder) 
 - Copy `modes/` folder content to data `modes/`.
